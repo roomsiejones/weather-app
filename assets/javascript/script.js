@@ -40,6 +40,28 @@ function callWeather(cityName) {
 
         })
 }
+
+// this makes the buttons in the search history when called
+function renderButtons() {
+    $(".list-group").empty();
+    for (var i = 0; i < history.length; i++) {
+      $(".list-group").prepend(
+        " <li class='list-group-item'>" + history[i] + "</li>"
+      );
+    }
+  }
+// this submits the form or tests if buttons were pressed and runs the above functions
+  function handleSubmit(event) {
+    event.preventDefault();
+    var cityName = $("#city-name").val().trim();
+
+    callWeather(cityName);
+  }
+
+  $("#add-city").on("click", handleSubmit);
+  $(".list-group").on("click", ".list-group-item", function () {
+    callWeather($(this).text());
+  });
 // I'll need to push that information to my main and mini cards
 
 
