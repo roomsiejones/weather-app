@@ -11,37 +11,37 @@
 </head>
 <body>
     
-    <div>
+    <div class='container'>
         <header>
-            <h1>Weather Dashboard</h1>
+            <h1 class='header'>Weather Dashboard</h1>
         </header>
         
-        <div>
+        <div class='row'>
             
             <!-- sidecard -->
-            <div>
-                <h3><!--directions --></h3>
+            <div class='card col-sm-4'>
+                <h3>Type in a city to search!<!--directions --></h3>
                 <form>
                     <label><!-- will make the city input --></label>
                     <input type="text" id="">
                     <input id="" type="submit" value="Search">
                 </form>
                     <!--will eventually populate past stored searches here-->
-                <ul>
-                    <li>Recent Searches</li>
+                <ul class="list-group">
+                    <li class="list-group-item">Recent Searches</li>
                 </ul>
             </div>
             
             <!--Results Display-->
-            <div>
-                <div>
-                    <div>
+            <div class="col-sm-8">
+                <div class='jumbotron'>
+                    <div class ='jumbotron'>
                     <h3><!--City Name--></h3>
-                    <img id=""><!--the icon thing-->
-                    <p id=""><!--temperature--></p>
-                    <p id=""><!--humidity--></p>
-                    <p id=""><!--wind speed--></p>
-                    <p id=""><!--UV Index--></p>
+                    <img id="icon"><!--the icon thing-->
+                    <p id="temp"><!--temperature--></p>
+                    <p id="humidity"><!--humidity--></p>
+                    <p id="windSpeed"><!--wind speed--></p>
+                    <p id="uvIndex"><!--UV Index--></p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <!--little cards beneath the big one-->
             <div class="row">  <!--main container-->
 
-                <div>
+                <div class='col-sm-2'>
                     <div>
                         <div>
                             <h4></h4><!--1st Day-->
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class='col-sm-2'>
                     <div>
                         <div>
                             <h4></h4><!--2nd Day-->
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class='col-sm-2'>
                     <div>
                         <div>
                             <h4></h4><!--3rd Day-->
@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class='col-sm-2'>
                     <div>
                         <div>
                             <h4></h4><!--4th Day-->
@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class='col-sm-2'>
                     <div>
                         <div>
                             <h4></h4><!--5th Day-->

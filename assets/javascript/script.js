@@ -5,7 +5,7 @@ var history = JSON.parse(localStorage.getItem("history")) || [];
 if (history.length > 0) {
     callWeather(history[history.length -1]);
 }
-console.log(history);
+
 // After the city name is stored from the search Bar, I'll need to make an API call to get the information based on that city
 
 function callWeather(cityName) {
@@ -21,6 +21,23 @@ function callWeather(cityName) {
                 localStorage.setItem("history", JSON.stringify(history));
             }
             // need to add cityHeading to html and a new var above
+
+            //Need to create the function later that makes the buttons show up
+          renderButtons();
+          //This will display the city name and locale date.
+          $(".currentCityName").text(response.name + " " + moment().format("l"));
+          var weatherPic = response.weather[0].icon;
+          var iconURL = "https://openweathermap.org/img/w/" + weatherPic + ".png";
+          // This will display the weather icon thing
+          $("#icon").attr("src", iconURL);
+          // This will display the temperature.
+          $("#temp").text("Temperature: " + response.main.temp + " °F");
+          //This will display the humidity
+          $("#humidity").text("Humidity: " + response.main.humidity + "%");
+          //This will display the windspeed
+          $("#windSpeed").text("Windspeed: " + response.wind.speed + " MPH");
+            // Do not see the call for UV yet, need to research it...
+
         })
 }
 // I'll need to push that information to my main and mini cards
