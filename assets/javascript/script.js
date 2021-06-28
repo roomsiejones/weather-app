@@ -1,6 +1,11 @@
 // Gotta make variables for city name, apikey, maybe history storage to begin with
 var apiKey ="443c6b8b13b68baef62db4e54611e14a"
+var history = JSON.parse(localStorage.getItem("history")) || [];
 
+if (history.length > 0) {
+    callWeather(history[history.length -1]);
+}
+console.log(history);
 // After the city name is stored from the search Bar, I'll need to make an API call to get the information based on that city
 
 function callWeather(cityName) {
@@ -11,7 +16,7 @@ function callWeather(cityName) {
     })
         .then(function(response){
             var cityHeading = response.name;
-            if history.indexOf(cityName) === -1) {
+            if (history.indexOf(cityName) === -1) {
                 history.pushState(cityHeading);
                 localStorage.setItem("history", JSON.stringify(history));
             }
