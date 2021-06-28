@@ -1,5 +1,6 @@
 // Gotta make variables for city name, apikey, maybe history storage to begin with
 var apiKey ="443c6b8b13b68baef62db4e54611e14a"
+
 var history = JSON.parse(localStorage.getItem("history")) || [];
 
 if (history.length > 0) {
@@ -37,6 +38,22 @@ function callWeather(cityName) {
           //This will display the windspeed
           $("#windSpeed").text("Windspeed: " + response.wind.speed + " MPH");
             // Do not see the call for UV yet, need to research it...
+            
+            var queryURL_UV =
+            "https://api.openweathermap.org/data/2.5/uvi?appid=" +
+            APIKey +
+            "&lat=" +
+            response.coord.lat +
+            "&lon=" +
+            response.coord.lon;
+          $.ajax({
+            url: queryURL_UV,
+            method: "GET",
+          }).then(function (response2) {
+            
+            console.log(response2);
+            $("#uvIndex").text("UV Index: " + response2.value);
+            var uvIndex = response2.value;
 
         })
 }
