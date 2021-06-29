@@ -39,7 +39,7 @@ When user clicks on a city in the search history user will again presented with 
 
 
 
-[Deployed website on Github]()
+[Deployed website on Github](https://roomsiejones.github.io/weather-app/)
 
 [Github Repository Link](https://github.com/roomsiejones/weather-app)
 
