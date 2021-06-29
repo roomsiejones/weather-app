@@ -1,7 +1,6 @@
 // Gotta make variables for city name, apiKey, maybe history storage to begin with
 var apiKey ="443c6b8b13b68baef62db4e54611e14a";
 // var apiKey="a9331833ce30bbd78e72624d69688c14"; 
-// var apiKey="f11b180b01f3fa6ea232bdb9d42d03b6";
 // had to create a new testing apiKey b/c initial one was giving 401 error...
 
 var history = JSON.parse(localStorage.getItem("history")) || [];
@@ -13,17 +12,19 @@ if (history.length > 0) {
 // After the city name is stored from the search Bar, I'll need to make an API call to get the information based on that city
 
 function callWeather(cityName) {
-    var queryURLCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&apid=" + apiKey;
+    var queryURLCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + apiKey;
     $.ajax({
         url: queryURLCurrent,
         method: "GET",
     })
+    
         .then(function(response){
             var cityHeading = response.name;
             if (history.indexOf(cityName) === -1) {
                 history.pushState(cityHeading);
                 localStorage.setItem("history", JSON.stringify(history));
             }
+            
             
 
             
