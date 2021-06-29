@@ -34,7 +34,7 @@ When user clicks on a city in the search history user will again presented with 
 
 
 
-![Application view](assets/images/capture.png)
+![Application view](assets/images/Capture.PNG)
 
 
 
