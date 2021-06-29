@@ -1,3 +1,17 @@
-/* maybe adding extra margins */
 
-/* maybe adding different colors */
+.cardlittle{
+    width:200px;
+    background-color: blue;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white;
+    border: white solid 3px; 
+}
+
+.maincon{
+    justify-content: flex-end;
+    margin-top: -40px;
+    margin-left: -48px
+}
+
